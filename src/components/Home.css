@@ -1,0 +1,27 @@
+form {
+  background-color: white;
+  padding: 3rem;
+  width: 55rem;
+  margin: 100px auto;
+}
+
+input, textarea {
+  width: 55rem;
+  margin: auto;
+  font-family: Montserrat,sans-serif;
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  color: #6b6b6b;
+  white-space: pre-wrap;
+}
+
+button {
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+}
+
+.input-container {
+  margin-bottom: 2rem;
+}
