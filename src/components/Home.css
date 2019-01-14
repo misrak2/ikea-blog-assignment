@@ -5,14 +5,19 @@ form {
   margin: 100px auto;
 }
 
-input, textarea {
+input,
+textarea {
   width: 55rem;
   margin: auto;
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1.1rem;
   padding: 0.2rem;
   color: #6b6b6b;
   white-space: pre-wrap;
+}
+
+.button-container {
+  text-align: center;
 }
 
 button {
