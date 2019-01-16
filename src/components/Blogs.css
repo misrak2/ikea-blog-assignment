@@ -2,14 +2,14 @@
   background-color: white;
   padding: 3rem;
   width: 55rem;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .button-container {
   text-align: center;
 }
 
-button {
+.setting-button {
   height: 2rem;
   width: 5rem;
   border-radius: 0.5rem;
@@ -34,4 +34,20 @@ span {
   font-size: 1.1rem;
   padding: 0.2rem;
   color: #6b6b6b;
+}
+
+.add-blog-container {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.add-blog {
+  height: 2rem;
+  width: 7rem;
+  border-radius: 0.5rem;
+  color: black;
+  background-color: white;
+  display: inline-block;
+  margin: 10px 10px;
 }

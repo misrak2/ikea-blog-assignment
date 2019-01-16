@@ -20,11 +20,13 @@ textarea {
   text-align: center;
 }
 
-button {
+.save-button {
   border-radius: 0.5rem;
   background-color: black;
   color: white;
   margin-top: 2rem;
+  height: 2rem;
+  width: 7rem;
 }
 
 .input-container {

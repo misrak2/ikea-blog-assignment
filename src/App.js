@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Blog from './components/Blog';
+import './App.css';
+import Add from './components/Add';
+import Blog from './components/Blogs';
+import Edit from './components/Edit';
 
 class App extends Component {
   render() {
     return (
         <BrowserRouter>
-            <div>
-                <Route path="/" component={ Home } exact />
-                <Route path="/blog" component={ Blog } />
-            </div>
-        </BrowserRouter>
+          <div>
+            <Route path="/blogs" component={ Blog } exact />
+            <Route path="/add-blog" component={ Add } />
+            <Route path="/edit-blog/:id" component={ Edit } />
+        </div>
+      </BrowserRouter>
     );
   }
 }

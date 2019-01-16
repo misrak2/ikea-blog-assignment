@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Blog from './Blog';
+import Blogs from './Blogs';
 
 let component;
 describe('Blog component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     const array = [];
-    component = ReactDOM.render(<Blog history={ array } />, div);
+    component = ReactDOM.render(<Blogs history={ array } />, div);
 
     localStorage.setItem(
       'Post',
@@ -24,7 +24,7 @@ describe('nextPath', () => {
         value: 'edit'
       }
     };
-    component.nextPath('home', editEvent);
+    component.nextPath('add-blog', editEvent);
   });
 
   it('should clear the local storage and route to other page if remove button clicked', () => {
