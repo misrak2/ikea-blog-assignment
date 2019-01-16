@@ -24,30 +24,30 @@ class Blogs extends Component {
 
   remove = (array, selected) => array.filter(el => el.id !== selected.id);
 
+  // this functions runs if any of the button clicked
   nextPath(path?, e, selectedBlog) {
     const type = e.target && e.target.value;
-    switch (type) {
-      case 'edit':
-        this.setState({ selectedBlog });
-        localStorage.setItem('SelectedBlog', JSON.stringify(selectedBlog));
-        this.props.history.push(path);
-        break;
-      case 'remove':
-        const updatedBlogs = this.remove(this.state.blogs, selectedBlog);
+    if (type) {
+      switch (type) {
+        case 'edit':
+          this.setState({ selectedBlog });
+          localStorage.setItem('SelectedBlog', JSON.stringify(selectedBlog));
+          this.props.history.push(path);
+          break;
+        case 'remove':
+          const updatedBlogs = this.remove(this.state.blogs, selectedBlog);
 
-        this.setState({ blogs: updatedBlogs });
-        localStorage.clear();
-        localStorage.setItem('Blogs', JSON.stringify(updatedBlogs));
-        break;
-      case 'add-blog':
-        this.props.history.push(path);
-        break;
-      default:
-        break;
+          this.setState({ blogs: updatedBlogs });
+          localStorage.clear();
+          localStorage.setItem('Blogs', JSON.stringify(updatedBlogs));
+          break;
+        case 'add-blog':
+          this.props.history.push(path);
+          break;
+        default:
+          break;
+      }
     }
-    // if (e.target && e.target.value === 'edit') {
-    // localStorage.clear();
-    // }
   }
 
   render() {
