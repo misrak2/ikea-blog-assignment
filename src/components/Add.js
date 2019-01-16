@@ -9,17 +9,15 @@ class Add extends Component {
       newMessage: '',
       blogs: []
     };
-    // localStorage.clear();
   }
 
   componentDidMount() {
     const blogsStored = JSON.parse(localStorage.getItem('Blogs'));
-
     const blogs = blogsStored ? this.setState({ blogs: blogsStored }) : [];
-
     this.setState(blogs);
   }
 
+  // returns the highest Id of the blog from the local storage
   getMaxId() {
     const blogs = this.state.blogs;
     return blogs.length > 0 ? Math.max(...blogs.map(blog => blog.id)) : 0;
@@ -34,6 +32,14 @@ class Add extends Component {
 
   // set the local storage and routes to the other page
   nextPath(path) {
+    this.updateState();
+
+    localStorage.clear();
+    localStorage.setItem('Blogs', JSON.stringify(this.state.blogs));
+    this.props.history.push(path);
+  }
+
+  updateState() {
     if (this.state.newTitle !== '' && this.state.newMessage !== '') {
       const timeStamp = Date.now();
       const _timeStamp = new Intl.DateTimeFormat('en-US', {
@@ -55,9 +61,6 @@ class Add extends Component {
       };
 
       this.state.blogs.push(blog);
-      localStorage.clear();
-      localStorage.setItem('Blogs', JSON.stringify(this.state.blogs));
-      this.props.history.push(path);
     } else {
       alert('Please write the title and text to save the blog');
     }
