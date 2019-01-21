@@ -72,7 +72,6 @@ class Edit extends Component {
   }
 
   render() {
-    console.log(this.state.blogs.length > 0 ? this.state.blogs[ 0 ].id : 0);
     return (
         <div>
           <form>
