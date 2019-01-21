@@ -24,7 +24,7 @@ describe('nextPath', () => {
         value: 'edit'
       }
     };
-    component.nextPath('add-blog', editEvent);
+    component.nextPath('edit-blog', editEvent);
   });
 
   it('should clear the local storage and route to other page if remove button clicked', () => {
